@@ -1,0 +1,1 @@
+export { default as yokeLogo } from './yoke-press-logo.webp';
