@@ -1,0 +1,41 @@
+.sidebar {
+    display: flex;
+    flex-direction: row;
+
+    .none {
+        display: none;
+    }
+
+    .sidebar-open {
+        cursor: pointer;
+    }
+
+    .sidebar-content {
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+        padding: 30px;
+        background-color: rgba(255, 255, 255, 0.5);
+        background-image: linear-gradient(to right, rgba(76, 175, 80, 0.5), rgba(0, 150, 136, 0.5), rgba(3, 169, 244, 0.5));
+        border-bottom-right-radius: 8px;
+        border-top-right-radius: 8px;
+        transition: cubic-bezier(0.775, 0.82, 0.965, 1);
+
+        .sidebar-inner {
+            display: flex;
+            flex-direction: column;
+            
+            h2 {
+                font-family: 'Alkatra';
+                padding: 5px;
+                border-radius: 8px;
+                letter-spacing: 0.5px;
+            }
+
+        }
+
+        .sidebar-close {
+            cursor: pointer;
+        }
+    }
+};

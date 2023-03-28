@@ -1,9 +1,12 @@
 import './landing.scss';
-import { Header } from '../../components';
+import { Header, Sidebar } from '../../components';
 
 const Landing = () => {
     return (
-        <><Header/></>
+        <>
+            <Header />
+            <Sidebar />
+        </>
     )
 };
 
