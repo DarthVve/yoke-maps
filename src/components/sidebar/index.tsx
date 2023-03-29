@@ -1,18 +1,22 @@
 import './sidebar.scss';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faTv, faBars} from '@fortawesome/free-solid-svg-icons';
+import { faTv, faBars } from '@fortawesome/free-solid-svg-icons';
+
+interface SidebarProps {
+    cities: string[];
+}
 
 
-const Sidebar = () => {
+const Sidebar = ({cities}: SidebarProps) => {
     const [show, setShow] = useState(false);
+    const [activeTab, setActiveTab] = useState<number | null>(null);
 
     const showSidebar = () => { 
         setShow(!show);
     };
 
-    const [cities] = useState(['Toronto', 'San Diego', 'Mexico City', 'Seoul', 'Havana', 'Vienna', 'Cairo', 'Reykjavik', 'Lima', 'Seville', 'Lagos', 'Tokyo', 'Suva', 'Kathmandu', 'Cape Town', 'Helsinki', 'Port Moresby', 'Addis Ababa', 'Buenos Aires', 'Bogota'])
-
+    
     return (
         <section className='sidebar'>
             <div className={!show ? 'sidebar-open' : 'none'} onClick={showSidebar}>
@@ -24,7 +28,7 @@ const Sidebar = () => {
                     <div className='sidebar-cities'>
                     {cities.sort().map((city, index) => { 
                         return (
-                                <p className='sidebar-city' key={index}>{city}</p>
+                            <p style={{cursor: 'pointer'}} className={activeTab === index ? 'sidebar-city-active' : 'sidebar-city'} key={index} onClick={() => setActiveTab(index)}>{city}</p>
                         )
                     })}
                     </div>

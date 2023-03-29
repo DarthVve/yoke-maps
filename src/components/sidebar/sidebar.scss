@@ -32,6 +32,21 @@
                 letter-spacing: 0.5px;
             }
 
+            .sidebar-cities {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                padding: 5px;
+                letter-spacing: 0.5px;
+
+                .sidebar-city-active {
+                    background-color: #4CAF50;
+                    color: #f3eea9;
+                    border-radius: 4px;
+                    font-size: 20px;
+                    padding: 5px;
+                }
+            }
         }
 
         .sidebar-close {
