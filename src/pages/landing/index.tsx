@@ -1,6 +1,6 @@
 import './landing.scss';
 import { useState } from 'react';
-import { Header, Sidebar } from '../../components';
+import { Header, Sidebar/*, Map*/ } from '../../components';
 
 const Landing = () => {
     const [cities] = useState<string[]>(['Toronto', 'San Diego', 'Mexico City', 'Seoul', 'Havana', 'Vienna', 'Cairo', 'Reykjavik', 'Lima', 'Seville', 'Lagos', 'Tokyo', 'Suva', 'Kathmandu', 'Cape Town', 'Helsinki', 'Port Moresby', 'Addis Ababa', 'Buenos Aires', 'Bogota']);
@@ -20,7 +20,10 @@ const Landing = () => {
     return (
         <>
             <Header onChange={handleSearchTermChange} searchRes={searchResults} />
-            <Sidebar cities={cities} />
+            <div className='landing'>
+                <Sidebar cities={cities} />
+                {/* <Map /> */}
+            </div>
         </>
     )
 };
